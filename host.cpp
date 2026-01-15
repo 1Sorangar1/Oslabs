@@ -13,281 +13,342 @@
 #include <algorithm>
 #include <sstream>
 #include <filesystem>
-#include <cstdlib>
-
-#include "conn.h"
-#include "conn_factory.h"
+#include "conn_mq.h"
+#include "conn_fifo.h"
+#include "conn_sock.h"
 #include "logger.h"
 
-const int NUM_CLIENTS = 3;
 
 std::atomic<bool> running(true);
-std::vector<pid_t> client_pids;
-
-struct ClientConnection {
-    int id;
-    std::unique_ptr<Conn> conn_to_client;
-    std::unique_ptr<Conn> conn_from_client;
-    bool ready;
-    bool listening;
-    
-    ClientConnection(int client_id) : id(client_id), ready(false), listening(false) {}
-};
+pid_t client_pid = 0;
 
 void signalHandler(int sig) {
-    (void)sig;
-    running = false;
-    for (pid_t pid : client_pids) {
-        if (pid > 0) {
-            kill(pid, SIGTERM);
-        }
-    }
+	(void)sig;
+	running = false;
+	if (client_pid > 0) {
+		kill(client_pid, SIGTERM);
+	}
 }
-
 std::string extractConnType(const std::string& program_name) {
-    std::filesystem::path p(program_name);
-    std::string filename = p.filename().string();
-    
-    if (filename.find("_mq") != std::string::npos) {
-        return "mq";
-    } else if (filename.find("_fifo") != std::string::npos) {
-        return "fifo";
-    } else if (filename.find("_sock") != std::string::npos) {
-        return "sock";
-    }
-    
-    return "";
+	std::filesystem::path p(program_name);
+	std::string filename = p.filename().string();
+	if (filename.find("_mq") != std::string::npos) {
+		return "mq";
+	}
+	else if (filename.find("_fifo") != std::string::npos) {
+		return "fifo";
+	}
+	else if (filename.find("_sock") != std::string::npos) {
+		return "sock";
+	}
+	return "";
+}
+//                           ХОСТ 
+void runHost(const std::string& conn_type) {
+	Logger::getInstance().logInfo("=== Host: Starting chat with connection type: " + conn_type + " ===");
+	std::unique_ptr<Conn> conn_to_client;
+	std::unique_ptr<Conn> conn_from_client;
+	if (conn_type == "mq") {
+		Logger::getInstance().logInfo("Host: Creating message queue connections...");
+		conn_to_client = std::make_unique<ConnMQ>("host_to_client", true);
+		conn_from_client = std::make_unique<ConnMQ>("client_to_host", true);
+	}
+	else if (conn_type == "fifo") {
+		Logger::getInstance().logInfo("Host: Creating FIFO connections...");
+		conn_to_client = std::make_unique<ConnFIFO>("host_to_client", true);
+		conn_from_client = std::make_unique<ConnFIFO>("client_to_host", true);
+	}
+	else if (conn_type == "sock") {
+		Logger::getInstance().logInfo("Host: Creating socket connections...");
+		conn_to_client = std::make_unique<ConnSock>("host_to_client", true);
+		conn_from_client = std::make_unique<ConnSock>("client_to_host", true);
+	}
+	else {
+		Logger::getInstance().logError("Host: Unknown connection type: " + conn_type);
+		return;
+	}
+	Logger::getInstance().logInfo("Host: Connections created successfully");
+	// Порождаем родственного клиента
+	pid_t pid = fork();
+	if (pid == -1) {
+		Logger::getInstance().logError("Host: Failed to fork: " + std::string(strerror(errno)));
+		return;
+	}
+	if (pid == 0) {
+		char path[1024];
+		ssize_t len = readlink("/proc/self/exe", path, sizeof(path) - 1);
+		if (len != -1) {
+			path[len] = '\0';
+			execl(path, path, "client", conn_type.c_str(), nullptr);
+		}
+		std::string exec_path = "./build/host_" + conn_type;
+		if (access(exec_path.c_str(), X_OK) != 0) {
+			exec_path = "./host_" + conn_type;
+		}
+		execl(exec_path.c_str(), exec_path.c_str(), "client", conn_type.c_str(), nullptr);
+		Logger::getInstance().logError("Host: Failed to exec client: " + std::string(strerror(errno)));
+		exit(1);
+	}
+	client_pid = pid;
+	Logger::getInstance().logInfo("Host: Client started with PID: " + std::to_string(pid));
+	std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+	if (conn_type == "fifo" || conn_type == "sock") {
+		Logger::getInstance().logInfo("Host: Opening connections...");
+		if (!conn_from_client->Open()) {
+			Logger::getInstance().logError("Host: Failed to open connection from client");
+			return;
+		}
+		if (!conn_to_client->Open()) {
+			Logger::getInstance().logError("Host: Failed to open connection to client");
+			return;
+		}
+	}
+	// Ожидани
+	ChatMessage join_msg;
+	if (conn_from_client->Read(&join_msg, sizeof(join_msg))) {
+		if (join_msg.type == -1 && std::string(join_msg.text) == "joined") {
+			Logger::getInstance().logInfo("Host: Client joined");
+		}
+	}
+	// Поток для чтения сообщений от клиента
+	std::thread read_thread([&]() {
+		ChatMessage msg;
+		while (running) {
+			if (conn_from_client->Read(&msg, sizeof(msg))) {
+				auto time_t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::time_point(std::chrono::milliseconds(msg.timestamp)));
+				std::string time_str = std::ctime(&time_t);
+				time_str.pop_back();
+				if (msg.type == -3 && std::string(msg.text) == "quit") {
+					Logger::getInstance().logInfo("Host: Received quit from client");
+					running = false;
+					return; 
+				}
+				if (msg.type == 0) {
+					//std::cout << "[" << time_str << "] Client: " << msg.text << std::endl;
+					Logger::getInstance().logInfo("Host received broadcast from client: " + std::string(msg.text));
+				}
+				else if (msg.type == 1 && msg.receiver_id == 0) {
+					std::cout << "[" << time_str << "] Private from Client: " << msg.text << std::endl;
+					Logger::getInstance().logInfo("Host received private from client: " + std::string(msg.text));
+				}
+
+		  }
+		  std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		}
+	});
+	// Основной цикл для ввода и отправки сообщений
+	while (running) {
+		std::string input;
+		std::cout << "Host: ";
+		if (std::getline(std::cin, input)) {
+			if (input == "/quit") {
+				ChatMessage quit_msg;
+				quit_msg.type = -3;  // Специальный тип для quit
+				quit_msg.sender_id = 0;
+				quit_msg.receiver_id = 1;
+				quit_msg.timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
+					std::chrono::system_clock::now().time_since_epoch()).count();
+				strncpy(quit_msg.text, "quit", sizeof(quit_msg.text) - 1);
+				conn_to_client->Write(&quit_msg, sizeof(quit_msg));
+
+				running = false;
+				continue;
+			}
+
+			if (input.empty()) continue;
+			ChatMessage msg;
+			msg.sender_id = 0;  // Host ID
+			msg.timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
+				std::chrono::system_clock::now().time_since_epoch()).count();
+			size_t space_pos = input.find(' ');
+			if (input.rfind("@ ", 0) == 0 && space_pos != std::string::npos) {
+				// Private message to client
+				msg.type = 1;
+				msg.receiver_id = 1;  // Client ID
+				strncpy(msg.text, input.substr(space_pos + 1).c_str(), sizeof(msg.text) - 1);
+				msg.text[sizeof(msg.text) - 1] = '\0';
+			}
+			else {
+				// Broadcast
+				msg.type = 0;
+				msg.receiver_id = 0;
+				strncpy(msg.text, input.c_str(), sizeof(msg.text) - 1);
+				msg.text[sizeof(msg.text) - 1] = '\0';
+			}
+			if (conn_to_client->Write(&msg, sizeof(msg))) {
+				Logger::getInstance().logInfo("Host sent message: " + input);
+			}
+			else {
+				Logger::getInstance().logError("Host: Failed to send message");
+			}
+		}
+	}
+	read_thread.join();
+	waitpid(client_pid, nullptr, 0);
+	Logger::getInstance().logInfo("Host: Shutting down");
+}
+//                            КЛИЕНТ
+void runClient(const std::string& conn_type) {
+	int client_id = 1;  // т.к. 1 к 1
+	Logger::getInstance().logInfo("=== Client: Starting chat with connection type: " + conn_type + " ===");
+	std::unique_ptr<Conn> conn_to_host;
+	std::unique_ptr<Conn> conn_from_host;
+	if (conn_type == "mq") {
+		conn_to_host = std::make_unique<ConnMQ>("client_to_host", false);
+		conn_from_host = std::make_unique<ConnMQ>("host_to_client", false);
+	}
+	else if (conn_type == "fifo") {
+		conn_to_host = std::make_unique<ConnFIFO>("client_to_host", false);
+		conn_from_host = std::make_unique<ConnFIFO>("host_to_client", false);
+	}
+	else if (conn_type == "sock") {
+		conn_to_host = std::make_unique<ConnSock>("client_to_host", false);
+		conn_from_host = std::make_unique<ConnSock>("host_to_client", false);
+	}
+	else {
+		Logger::getInstance().logError("Client: Unknown connection type: " + conn_type);
+		return;
+	}
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	if (conn_type == "fifo" || conn_type == "sock") {
+		Logger::getInstance().logInfo("Client: Opening connections...");
+		if (!conn_from_host->Open()) {
+			Logger::getInstance().logError("Client: Failed to open connection from host");
+			return;
+		}
+		if (!conn_to_host->Open()) {
+			Logger::getInstance().logError("Client: Failed to open connection to host");
+			return;
+		}
+	}
+	// Отправка сигнала присоединения
+	ChatMessage join_msg;
+	join_msg.type = -1;
+	join_msg.sender_id = client_id;
+	join_msg.receiver_id = 0;
+	join_msg.timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
+		std::chrono::system_clock::now().time_since_epoch()).count();
+	strncpy(join_msg.text, "joined", sizeof(join_msg.text) - 1);
+	conn_to_host->Write(&join_msg, sizeof(join_msg));
+	// Поток для чтения сообщений от хоста
+	std::thread read_thread([&]() {
+		ChatMessage msg;
+		while (running) {
+			if (conn_from_host->Read(&msg, sizeof(msg))) {
+				auto time_t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::time_point(std::chrono::milliseconds(msg.timestamp)));
+				std::string time_str = std::ctime(&time_t);
+				time_str.pop_back();
+				if (msg.type == -3 && std::string(msg.text) == "quit") {
+					Logger::getInstance().logInfo("Host: Received quit from host");
+					running = false;
+					return; 
+				}
+				if (msg.type == 0) {
+					//std::cout << "[" << time_str << "] Host (broadcast): " << msg.text << std::endl;
+					Logger::getInstance().logInfo("Client received broadcast: " + std::string(msg.text));
+				}
+				else if (msg.type == 1 && msg.receiver_id == client_id) {
+					std::cout << "[" << time_str << "] Private from Host: " << msg.text << std::endl;
+					Logger::getInstance().logInfo("Client received private from host: " + std::string(msg.text));
+				}
+			}
+			std::this_thread::sleep_for(std::chrono::milliseconds(10));
+		}
+	});
+	// Таймаут поток
+	std::atomic<std::chrono::steady_clock::time_point> last_message_time(std::chrono::steady_clock::now());
+	std::thread timeout_thread([&]() {
+		while (running) {
+			std::this_thread::sleep_for(std::chrono::seconds(1));
+			auto now = std::chrono::steady_clock::now();
+			auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - last_message_time.load()).count();
+			if (elapsed >= 60) {
+				Logger::getInstance().logError("Client: No messages sent for 60 seconds, terminating");
+				kill(getpid(), SIGKILL);
+			}
+		}
+	});
+	// Основной цикл для ввода и отправки сообщений
+	while (running) {
+		std::string input;
+		std::cout << "Client: ";
+		if (std::getline(std::cin, input)) {
+			if (input == "/quit") {
+				running = false;
+				continue;
+			}
+			if (input.empty()) continue;
+			ChatMessage msg;
+			msg.sender_id = client_id;
+			msg.timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
+				std::chrono::system_clock::now().time_since_epoch()).count();
+			size_t space_pos = input.find(' ');
+			if (input.rfind("@ ", 0) == 0 && space_pos != std::string::npos) {
+				// Private to host
+				msg.type = 1;
+				msg.receiver_id = 0;  // Host ID
+				strncpy(msg.text, input.substr(space_pos + 1).c_str(), sizeof(msg.text) - 1);
+				msg.text[sizeof(msg.text) - 1] = '\0';
+			}
+			else {
+				// Broadcast
+				msg.type = 0;
+				msg.receiver_id = 0;
+				strncpy(msg.text, input.c_str(), sizeof(msg.text) - 1);
+				msg.text[sizeof(msg.text) - 1] = '\0';
+			}
+			if (conn_to_host->Write(&msg, sizeof(msg))) {
+				last_message_time = std::chrono::steady_clock::now();
+				Logger::getInstance().logInfo("Client sent message: " + input);
+			}
+			else {
+				Logger::getInstance().logError("Client: Failed to send message");
+			}
+		}
+	}
+	read_thread.join();
+	timeout_thread.join();
+	Logger::getInstance().logInfo("Client: Shutting down");
 }
 
-void runHost(const std::string& conn_type) {
-    std::cout << "Chat server starting" << std::endl;
-    
-    std::vector<ClientConnection> clients;
-    
-    for (int i = 0; i < NUM_CLIENTS; i++) {
-        clients.emplace_back(i);
-        clients[i].conn_to_client = ConnFactory::createToClient(conn_type, i, true);
-        clients[i].conn_from_client = ConnFactory::createFromClient(conn_type, i, true);
-        
-        if (!clients[i].conn_to_client || !clients[i].conn_from_client) {
-            std::cerr << "Failed to create connections for client " << i << std::endl;
-            return;
-        }
-    }
-    
-    std::filesystem::path host_exe_path;
-    char host_path[1024];
-    ssize_t len = readlink("/proc/self/exe", host_path, sizeof(host_path) - 1);
-    if (len != -1) {
-        host_path[len] = '\0';
-        host_exe_path = std::filesystem::path(host_path);
-    } else {
-        std::cerr << "Failed to get executable path" << std::endl;
-        return;
-    }
-    
-    std::filesystem::path build_dir = host_exe_path.parent_path();
-    std::string client_exe_name = "client_" + conn_type;
-    std::filesystem::path client_exe_path = build_dir / client_exe_name;
-    
-    for (int i = 0; i < NUM_CLIENTS; i++) {
-        pid_t pid = fork();
-        if (pid == -1) {
-            std::cerr << "Failed to fork client " << i << std::endl;
-            continue;
-        }
-        
-        if (pid == 0) {
-            std::string client_id_str = std::to_string(i);
-            std::string client_path = client_exe_path.string();
-            
-            execl(client_path.c_str(), client_exe_name.c_str(), conn_type.c_str(), client_id_str.c_str(), nullptr);
-            
-            std::string alt_path = "./build/" + client_exe_name;
-            execl(alt_path.c_str(), client_exe_name.c_str(), conn_type.c_str(), client_id_str.c_str(), nullptr);
-            
-            alt_path = "./" + client_exe_name;
-            execl(alt_path.c_str(), client_exe_name.c_str(), conn_type.c_str(), client_id_str.c_str(), nullptr);
-            
-            std::cerr << "Failed to exec client: " << strerror(errno) << std::endl;
-            exit(1);
-        }
-        
-        client_pids.push_back(pid);
-        std::cout << "Client " << i << " waiting for messages" << std::endl;
-    }
-    
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    
-    if (conn_type == "fifo" || conn_type == "sock") {
-        std::vector<std::thread> open_threads;
-        for (auto& client : clients) {
-            open_threads.emplace_back([&client, conn_type]() {
-                if (conn_type == "fifo") {
-                    if (client.conn_from_client) {
-                        client.conn_from_client->Open();
-                    }
-                    if (client.conn_to_client) {
-                        client.conn_to_client->Open();
-                    }
-                } else {
-                    if (client.conn_to_client) {
-                        client.conn_to_client->Open();
-                    }
-                    if (client.conn_from_client) {
-                        client.conn_from_client->Open();
-                    }
-                }
-            });
-        }
-        for (auto& thread : open_threads) {
-            thread.join();
-        }
-    }
-    
-    std::vector<std::thread> read_threads;
-    std::atomic<int> ready_count(0);
-    std::atomic<int> listening_count(0);
-    
-    for (int i = 0; i < NUM_CLIENTS; i++) {
-        read_threads.emplace_back([&, i]() {
-            ChatMessage msg;
-            while (running) {
-                std::this_thread::sleep_for(std::chrono::milliseconds(10));
-                if (clients[i].conn_from_client && clients[i].conn_from_client->Read(&msg, sizeof(msg))) {
-                    if (msg.type == -1) { // Сигнал присоединения/готовности
-                        std::string text = std::string(msg.text);
-                        if (text == "joined" && !clients[i].ready) {
-                            clients[i].ready = true;
-                            std::cout << "Client " << i << " joined" << std::endl;
-                            ready_count++;
-                        }
-                        // "ready" обрабатывается клиентом
-                    } else if (msg.type == -2) { // Сигнал начала прослушивания
-                        if (!clients[i].listening) {
-                            clients[i].listening = true;
-                            std::cout << "Client " << i << " started listening" << std::endl;
-                            listening_count++;
-                        }
-                    } else {
-                    }
-                }
-            }
-        });
-    }
-    
-    while (ready_count < NUM_CLIENTS && running) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    }
-    
-    std::cout << "All clients confirmed readiness" << std::endl;
-    
-    while (listening_count < NUM_CLIENTS && running) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    }
-    
-    std::cout << "All clients started listening" << std::endl;
-    std::cout << "Chat server ready. Commands:" << std::endl;
-    std::cout << "  all:<message>       - broadcast to all" << std::endl;
-    std::cout << "  to <id>:<message>   - send to specific client (0-" << (NUM_CLIENTS - 1) << ")" << std::endl;
-    std::cout << "  quit                - shutdown server" << std::endl;
-    
-    std::string input;
-    while (running) {
-        std::getline(std::cin, input);
-        
-        if (!running) break;
-        
-        if (input.empty()) continue;
-        
-        if (input == "quit") {
-            running = false;
-            break;
-        }
-        
-        ChatMessage msg;
-        msg.sender_id = 0; // Хост
-        msg.timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
-            std::chrono::system_clock::now().time_since_epoch()).count();
-        
-        if (input.substr(0, 4) == "all:") {
-            std::string message = input.substr(4);
-            if (!message.empty() && message[0] == ' ') {
-                message = message.substr(1);
-            }
-            
-            msg.type = 0; 
-            msg.receiver_id = 0;
-            strncpy(msg.text, message.c_str(), sizeof(msg.text) - 1);
-            msg.text[sizeof(msg.text) - 1] = '\0';
-            
-            std::cout << "Host broadcast: " << message << std::endl;
-            
-            for (auto& client : clients) {
-                if (client.conn_to_client) {
-                    client.conn_to_client->Write(&msg, sizeof(msg));
-                }
-            }
-        } else if (input.substr(0, 3) == "to ") {
-            size_t colon_pos = input.find(':', 3);
-            if (colon_pos != std::string::npos) {
-                std::string id_str = input.substr(3, colon_pos - 3);
-                id_str.erase(0, id_str.find_first_not_of(" \t"));
-                id_str.erase(id_str.find_last_not_of(" \t") + 1);
-                
-                try {
-                    int client_id = std::stoi(id_str);
-                    if (client_id >= 0 && client_id < NUM_CLIENTS) {
-                        std::string message = input.substr(colon_pos + 1);
-                        if (!message.empty() && message[0] == ' ') {
-                            message = message.substr(1);
-                        }
-                        
-                        msg.type = 1;
-                        msg.receiver_id = client_id;
-                        strncpy(msg.text, message.c_str(), sizeof(msg.text) - 1);
-                        msg.text[sizeof(msg.text) - 1] = '\0';
-                        
-                        std::cout << "Host private to " << client_id << ": " << message << std::endl;
-                        
-                        if (clients[client_id].conn_to_client) {
-                            clients[client_id].conn_to_client->Write(&msg, sizeof(msg));
-                        }
-                    }
-                } catch (...) {
-                }
-            }
-        }
-    }
-    
-    for (auto& thread : read_threads) {
-        thread.join();
-    }
-    
-    for (pid_t pid : client_pids) {
-        if (pid > 0) {
-            int status;
-            waitpid(pid, &status, 0);
-        }
-    }
-}
+
 
 int main(int argc, char* argv[]) {
-    std::string conn_type;
-    
-    if (argc > 0 && argv[0] != nullptr) {
-        conn_type = extractConnType(argv[0]);
-    }
-    
-    if (conn_type.empty()) {
-        std::cerr << "Error: Cannot determine connection type from program name" << std::endl;
-        return 1;
-    }
-    
-    signal(SIGINT, signalHandler);
-    signal(SIGTERM, signalHandler);
-    
-    runHost(conn_type);
-    
-    return 0;
+	std::string mode = "host";
+	std::string conn_type;
+	if (argc > 0 && argv[0] != nullptr) {
+		conn_type = extractConnType(argv[0]);
+	}
+	if (conn_type.empty()) {
+		if (argc >= 2) {
+			conn_type = argv[1];
+		}
+		else {
+			std::cerr << "Error: Cannot determine connection type from program name" << std::endl;
+			std::cerr << "Usage: " << argv[0] << " [client] [mq|fifo|sock]" << std::endl;
+			return 1;
+		}
+	}
+	if (argc >= 2 && std::string(argv[1]) == "client") {
+		mode = "client";
+		if (conn_type.empty() && argc >= 3) {
+			conn_type = argv[2];
+		}
+	}
+	if (conn_type != "mq" && conn_type != "fifo" && conn_type != "sock") {
+		std::cerr << "Invalid connection type: " << conn_type << std::endl;
+		std::cerr << "Usage: " << argv[0] << " [client]" << std::endl;
+		return 1;
+	}
+	signal(SIGINT, signalHandler);
+	signal(SIGTERM, signalHandler);
+	if (mode == "client") {
+		Logger::getInstance().logInfo("Client: Starting with connection type: " + conn_type);
+		runClient(conn_type);
+	}
+	else {
+		Logger::getInstance().logInfo("Host: Starting with connection type: " + conn_type);
+		runHost(conn_type);
+	}
+	return 0;
 }

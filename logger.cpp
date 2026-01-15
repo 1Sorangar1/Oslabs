@@ -35,7 +35,7 @@ void Logger::writeLog(const std::string& level, const std::string& message) {
     std::lock_guard<std::mutex> lock(mutex_);
     std::string log_entry = "[" + getCurrentTime() + "] [" + level + "] " + message;
     
-    std::cout << log_entry << std::endl;
+    //std::cout << log_entry << std::endl;
     
     if (log_file_.is_open()) {
         log_file_ << log_entry << std::endl;

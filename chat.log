@@ -1,0 +1,1299 @@
+[2026-01-15 12:50:40] [INFO] Host: Starting with connection type: mq
+[2026-01-15 12:50:40] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 12:50:40] [INFO] Host: Creating message queue connections...
+[2026-01-15 12:50:40] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 12:50:40] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 12:50:40] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 12:50:40] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 12:50:40] [INFO] Host: Connections created successfully
+[2026-01-15 12:50:40] [INFO] Host: Client started with PID: 1054
+[2026-01-15 12:50:40] [INFO] Client: Starting with connection type: mq
+[2026-01-15 12:50:40] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 12:50:40] [INFO] Client: Opening message queue connections...
+[2026-01-15 12:50:40] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 12:50:40] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 12:50:40] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 12:50:40] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 12:50:41] [INFO] Client: Connections opened successfully
+[2026-01-15 12:50:41] [INFO] Client: Connected to host
+[2026-01-15 12:50:43] [INFO] Client: Sending general message to host: 123
+[2026-01-15 12:50:43] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 12:50:43] [LOG] [Thu Jan 15 12:50:43 2026] Client: 123
+[2026-01-15 12:50:43] [INFO] Client: General message sent successfully
+[2026-01-15 12:50:43] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 12:50:43] [LOG] [Thu Jan 15 12:50:43 2026] Client: 123
+[2026-01-15 12:50:43] [INFO] Host: Received general message from client
+[2026-01-15 12:50:47] [INFO] Host: Sending general message to client: 456
+[2026-01-15 12:50:47] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 12:50:47] [LOG] [Thu Jan 15 12:50:47 2026] Host: 456
+[2026-01-15 12:50:47] [INFO] Host: General message sent successfully
+[2026-01-15 12:50:47] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 12:50:47] [LOG] [Thu Jan 15 12:50:47 2026] Host: 456
+[2026-01-15 12:50:47] [INFO] Client: Received general message from host
+[2026-01-15 12:50:50] [INFO] Client: Sending general message to host: eflvrker
+[2026-01-15 12:50:50] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 12:50:50] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 12:50:50] [LOG] [Thu Jan 15 12:50:50 2026] Client: eflvrker
+[2026-01-15 12:50:50] [INFO] Host: Received general message from client
+[2026-01-15 12:50:50] [LOG] [Thu Jan 15 12:50:50 2026] Client: eflvrker
+[2026-01-15 12:50:50] [INFO] Client: General message sent successfully
+[2026-01-15 12:51:00] [INFO] Host: Sending general message to client: 567
+[2026-01-15 12:51:00] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 12:51:00] [LOG] [Thu Jan 15 12:51:00 2026] Host: 567
+[2026-01-15 12:51:00] [INFO] Host: General message sent successfully
+[2026-01-15 12:51:00] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 12:51:00] [LOG] [Thu Jan 15 12:51:00 2026] Host: 567
+[2026-01-15 12:51:00] [INFO] Client: Received general message from host
+[2026-01-15 12:51:14] [INFO] Client: Sending general message to host: f45g
+[2026-01-15 12:51:14] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 12:51:14] [LOG] [Thu Jan 15 12:51:14 2026] Client: f45g
+[2026-01-15 12:51:14] [INFO] Client: General message sent successfully
+[2026-01-15 12:51:14] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 12:51:14] [LOG] [Thu Jan 15 12:51:14 2026] Client: f45g
+[2026-01-15 12:51:14] [INFO] Host: Received general message from client
+[2026-01-15 12:51:17] [INFO] Host: Sending general message to client: 45f45f45f45f45f4
+[2026-01-15 12:51:17] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 12:51:17] [LOG] [Thu Jan 15 12:51:17 2026] Host: 45f45f45f45f45f4
+[2026-01-15 12:51:17] [INFO] Host: General message sent successfully
+[2026-01-15 12:51:17] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 12:51:17] [LOG] [Thu Jan 15 12:51:17 2026] Host: 45f45f45f45f45f4
+[2026-01-15 12:51:17] [INFO] Client: Received general message from host
+[2026-01-15 12:51:21] [INFO] Client: Sending general message to host: f5g45g45g54g45g
+[2026-01-15 12:51:21] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 12:51:21] [LOG] [Thu Jan 15 12:51:21 2026] Client: f5g45g45g54g45g
+[2026-01-15 12:51:21] [INFO] Client: General message sent successfully
+[2026-01-15 12:51:21] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 12:51:21] [LOG] [Thu Jan 15 12:51:21 2026] Client: f5g45g45g54g45g
+[2026-01-15 12:51:21] [INFO] Host: Received general message from client
+[2026-01-15 12:52:11] [INFO] Host: Sending general message to client: h
+[2026-01-15 12:52:11] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 12:52:11] [LOG] [Thu Jan 15 12:52:11 2026] Host: h
+[2026-01-15 12:52:11] [INFO] Host: General message sent successfully
+[2026-01-15 12:52:11] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 12:52:11] [LOG] [Thu Jan 15 12:52:11 2026] Host: h
+[2026-01-15 12:52:11] [INFO] Client: Received general message from host
+[2026-01-15 12:52:22] [ERROR] Client: No messages sent for 60 seconds, terminating
+[2026-01-15 12:52:22] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 12:52:22] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 12:52:22] [INFO] Host: Service message from client: timeout_exit
+[2026-01-15 12:52:32] [INFO] Host: Client finished
+[2026-01-15 12:52:32] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 12:52:32] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 12:52:37] [INFO] Host: Starting with connection type: sock
+[2026-01-15 12:52:37] [INFO] === Host: Starting chat with connection type: sock ===
+[2026-01-15 12:52:37] [INFO] Host: Creating socket connections...
+[2026-01-15 12:52:37] [INFO] ConnSock: Initializing with id=host_to_client, create=true
+[2026-01-15 12:52:37] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 12:52:37] [INFO] ConnSock: Initializing with id=client_to_host, create=true
+[2026-01-15 12:52:37] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 12:52:37] [INFO] Host: Connections created successfully
+[2026-01-15 12:52:37] [INFO] Host: Client started with PID: 1072
+[2026-01-15 12:52:37] [INFO] Client: Starting with connection type: sock
+[2026-01-15 12:52:37] [INFO] === Client: Starting chat with connection type: sock ===
+[2026-01-15 12:52:37] [INFO] Client: Opening socket connections...
+[2026-01-15 12:52:37] [INFO] ConnSock: Initializing with id=client_to_host, create=false
+[2026-01-15 12:52:37] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 12:52:37] [INFO] ConnSock: Initializing with id=host_to_client, create=false
+[2026-01-15 12:52:37] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 12:52:38] [INFO] Client: Connecting to host sockets...
+[2026-01-15 12:52:38] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 12:52:38] [INFO] ConnSock: Connected to server socket
+[2026-01-15 12:52:38] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 12:52:38] [INFO] ConnSock: Connected to server socket
+[2026-01-15 12:52:38] [INFO] Client: Socket connections established
+[2026-01-15 12:52:38] [INFO] Client: Connections opened successfully
+[2026-01-15 12:52:38] [INFO] Client: Connected to host
+[2026-01-15 12:52:39] [INFO] Host: Accepting socket connections...
+[2026-01-15 12:52:39] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 12:52:39] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 12:52:39] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 12:52:39] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 12:52:39] [INFO] Host: Socket connections accepted
+[2026-01-15 12:52:42] [INFO] Client: Sending general message to host: 123
+[2026-01-15 12:52:42] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 12:52:42] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 12:52:42] [LOG] [Thu Jan 15 12:52:42 2026] Client: 123
+[2026-01-15 12:52:42] [INFO] Client: General message sent successfully
+[2026-01-15 12:52:42] [LOG] [Thu Jan 15 12:52:42 2026] Client: 123
+[2026-01-15 12:52:42] [INFO] Host: Received general message from client
+[2026-01-15 12:52:44] [INFO] Host: Sending general message to client: 12345
+[2026-01-15 12:52:44] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 12:52:44] [LOG] [Thu Jan 15 12:52:44 2026] Host: 12345
+[2026-01-15 12:52:44] [INFO] Host: General message sent successfully
+[2026-01-15 12:52:44] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 12:52:44] [LOG] [Thu Jan 15 12:52:44 2026] Host: 12345
+[2026-01-15 12:52:44] [INFO] Client: Received general message from host
+[2026-01-15 12:52:49] [INFO] Client: Shutting down
+[2026-01-15 12:53:21] [INFO] Host: Client finished
+[2026-01-15 12:53:21] [INFO] ConnSock: Cleaned up resources
+[2026-01-15 12:53:21] [INFO] ConnSock: Cleaned up resources
+[2026-01-15 12:53:35] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 12:53:35] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 12:53:35] [INFO] Host: Creating FIFO connections...
+[2026-01-15 12:53:35] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 12:53:35] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 12:53:35] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 12:53:35] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 12:53:35] [INFO] Host: Connections created successfully
+[2026-01-15 12:53:35] [INFO] Host: Client started with PID: 1086
+[2026-01-15 12:53:35] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 12:53:35] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 12:53:35] [INFO] Client: Opening FIFO connections...
+[2026-01-15 12:53:35] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 12:53:35] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 12:53:35] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 12:53:35] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 12:53:35] [INFO] Client: Opening FIFO connections...
+[2026-01-15 12:53:36] [INFO] Host: Opening FIFO connections...
+[2026-01-15 13:16:22] [INFO] Host: Starting with connection type: mq
+[2026-01-15 13:16:22] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 13:16:22] [INFO] Host: Creating message queue connections...
+[2026-01-15 13:16:22] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 13:16:22] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:16:22] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 13:16:22] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:16:22] [INFO] Host: Connections created successfully
+[2026-01-15 13:16:22] [INFO] Host: Client started with PID: 1871
+[2026-01-15 13:16:22] [INFO] Client: Starting with connection type: mq
+[2026-01-15 13:16:22] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 13:16:22] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 13:16:22] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:16:22] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 13:16:22] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:16:23] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:16:24] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:16:24] [INFO] Host: Client joined
+[2026-01-15 13:16:40] [INFO] Client: Shutting down
+[2026-01-15 13:16:40] [INFO] Host: Shutting down
+[2026-01-15 13:16:40] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:16:40] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:16:44] [INFO] Host: Starting with connection type: mq
+[2026-01-15 13:16:44] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 13:16:44] [INFO] Host: Creating message queue connections...
+[2026-01-15 13:16:44] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 13:16:44] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:16:44] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 13:16:44] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:16:44] [INFO] Host: Connections created successfully
+[2026-01-15 13:16:44] [INFO] Host: Client started with PID: 1874
+[2026-01-15 13:16:44] [INFO] Client: Starting with connection type: mq
+[2026-01-15 13:16:44] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 13:16:44] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 13:16:44] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:16:44] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 13:16:44] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:16:44] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:16:45] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:16:45] [INFO] Host: Client joined
+[2026-01-15 13:16:52] [INFO] Client: Shutting down
+[2026-01-15 13:16:52] [INFO] Host: Shutting down
+[2026-01-15 13:16:52] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:16:52] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:17:08] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 13:17:08] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 13:17:08] [INFO] Host: Creating FIFO connections...
+[2026-01-15 13:17:08] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 13:17:08] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 13:17:08] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 13:17:08] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 13:17:08] [INFO] Host: Connections created successfully
+[2026-01-15 13:17:08] [INFO] Host: Client started with PID: 1880
+[2026-01-15 13:17:08] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 13:17:08] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 13:17:08] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 13:17:08] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 13:17:08] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 13:17:08] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 13:17:09] [INFO] Client: Opening connections...
+[2026-01-15 13:17:09] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 13:17:10] [INFO] Host: Opening connections...
+[2026-01-15 13:17:10] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 13:17:10] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 13:17:10] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 13:17:10] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 13:17:10] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 13:17:10] [INFO] Host: Client joined
+[2026-01-15 13:18:10] [ERROR] Client: No messages sent for 60 seconds, terminating
+[2026-01-15 13:24:35] [INFO] Host: Shutting down
+[2026-01-15 13:24:35] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 13:24:35] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 13:29:30] [INFO] Host: Starting with connection type: mq
+[2026-01-15 13:29:30] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 13:29:30] [INFO] Host: Creating message queue connections...
+[2026-01-15 13:29:30] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 13:29:30] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:29:30] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 13:29:30] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:29:30] [INFO] Host: Connections created successfully
+[2026-01-15 13:29:30] [INFO] Host: Client started with PID: 34819
+[2026-01-15 13:29:30] [INFO] Client: Starting with connection type: mq
+[2026-01-15 13:29:30] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 13:29:30] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 13:29:30] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:29:30] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 13:29:30] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:29:30] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:29:31] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:29:31] [INFO] Host: Client joined
+[2026-01-15 13:29:34] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:29:34] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:29:34] [INFO] Client sent message: 123
+[2026-01-15 13:29:34] [INFO] Host received broadcast from client: 123
+[2026-01-15 13:29:38] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:29:38] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:29:38] [INFO] Client received broadcast: 456
+[2026-01-15 13:29:38] [INFO] Host sent message: 456
+[2026-01-15 13:29:42] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:29:42] [INFO] Client sent message: rv3rv4rv3
+[2026-01-15 13:29:42] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:29:42] [INFO] Host received broadcast from client: rv3rv4rv3
+[2026-01-15 13:29:45] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:29:45] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:29:45] [INFO] Client received broadcast: 3rgpi3jg3
+[2026-01-15 13:29:45] [INFO] Host sent message: 3rgpi3jg3
+[2026-01-15 13:29:50] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:29:50] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:29:50] [INFO] Client sent message: 3g345g345g354g34g
+[2026-01-15 13:29:50] [INFO] Host received broadcast from client: 3g345g345g354g34g
+[2026-01-15 13:29:55] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:29:55] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:29:55] [INFO] Host sent message: /quit
+[2026-01-15 13:29:55] [INFO] Client received broadcast: /quit
+[2026-01-15 13:30:03] [INFO] Client: Shutting down
+[2026-01-15 13:30:04] [INFO] Host: Shutting down
+[2026-01-15 13:30:04] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:30:04] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:30:10] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 13:30:10] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 13:30:10] [INFO] Host: Creating FIFO connections...
+[2026-01-15 13:30:10] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 13:30:10] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 13:30:10] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 13:30:10] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 13:30:10] [INFO] Host: Connections created successfully
+[2026-01-15 13:30:10] [INFO] Host: Client started with PID: 34824
+[2026-01-15 13:30:10] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 13:30:10] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 13:30:10] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 13:30:10] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 13:30:10] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 13:30:10] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 13:30:10] [INFO] Client: Opening connections...
+[2026-01-15 13:30:10] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 13:30:11] [INFO] Host: Opening connections...
+[2026-01-15 13:30:11] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 13:30:11] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 13:30:11] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 13:30:11] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 13:30:11] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 13:30:11] [INFO] Host: Client joined
+[2026-01-15 13:30:14] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 13:30:14] [INFO] Host sent message: wef3we4f34f
+[2026-01-15 13:30:14] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 13:30:14] [INFO] Client received broadcast: wef3we4f34f
+[2026-01-15 13:30:16] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 13:30:16] [INFO] Client sent message: f
+[2026-01-15 13:30:16] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 13:30:16] [INFO] Host received broadcast from client: f
+[2026-01-15 13:30:18] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 13:30:18] [INFO] Host sent message: ref
+[2026-01-15 13:30:18] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 13:30:18] [INFO] Client received broadcast: ref
+[2026-01-15 13:30:20] [INFO] Client: Shutting down
+[2026-01-15 13:30:21] [INFO] Host: Shutting down
+[2026-01-15 13:30:21] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 13:30:21] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 13:30:34] [INFO] Host: Starting with connection type: sock
+[2026-01-15 13:30:34] [INFO] === Host: Starting chat with connection type: sock ===
+[2026-01-15 13:30:34] [INFO] Host: Creating socket connections...
+[2026-01-15 13:30:34] [INFO] ConnSock: Initializing with id=host_to_client, create=true
+[2026-01-15 13:30:34] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 13:30:34] [INFO] ConnSock: Initializing with id=client_to_host, create=true
+[2026-01-15 13:30:34] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 13:30:34] [INFO] Host: Connections created successfully
+[2026-01-15 13:30:34] [INFO] Host: Client started with PID: 34829
+[2026-01-15 13:30:34] [INFO] Client: Starting with connection type: sock
+[2026-01-15 13:30:34] [INFO] === Client: Starting chat with connection type: sock ===
+[2026-01-15 13:30:34] [INFO] ConnSock: Initializing with id=client_to_host, create=false
+[2026-01-15 13:30:34] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 13:30:34] [INFO] ConnSock: Initializing with id=host_to_client, create=false
+[2026-01-15 13:30:34] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 13:30:34] [INFO] Client: Opening connections...
+[2026-01-15 13:30:34] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 13:30:34] [INFO] ConnSock: Connected to server socket
+[2026-01-15 13:30:34] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 13:30:34] [INFO] ConnSock: Connected to server socket
+[2026-01-15 13:30:34] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 13:30:35] [INFO] Host: Opening connections...
+[2026-01-15 13:30:35] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 13:30:35] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 13:30:35] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 13:30:35] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 13:30:35] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 13:30:35] [INFO] Host: Client joined
+[2026-01-15 13:30:38] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 13:30:38] [INFO] Client sent message: 6h56h46h4
+[2026-01-15 13:30:38] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 13:30:38] [INFO] Host received broadcast from client: 6h56h46h4
+[2026-01-15 13:30:40] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 13:30:40] [INFO] Host sent message: 5y6h56h356h
+[2026-01-15 13:30:40] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 13:30:40] [INFO] Client received broadcast: 5y6h56h356h
+[2026-01-15 13:33:07] [INFO] Host: Starting with connection type: mq
+[2026-01-15 13:33:07] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 13:33:07] [INFO] Host: Creating message queue connections...
+[2026-01-15 13:33:07] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 13:33:07] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:33:07] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 13:33:07] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:33:07] [INFO] Host: Connections created successfully
+[2026-01-15 13:33:07] [INFO] Host: Client started with PID: 35076
+[2026-01-15 13:33:07] [INFO] Client: Starting with connection type: mq
+[2026-01-15 13:33:07] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 13:33:07] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 13:33:07] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:33:07] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 13:33:07] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:33:07] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:33:08] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:33:08] [INFO] Host: Client joined
+[2026-01-15 13:33:11] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:33:11] [INFO] Client sent message: rgtg
+[2026-01-15 13:33:11] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:33:11] [INFO] Host received broadcast from client: rgtg
+[2026-01-15 13:33:13] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:33:13] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:33:13] [INFO] Host sent message: tg4
+[2026-01-15 13:33:13] [INFO] Client received broadcast: tg4
+[2026-01-15 13:33:18] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:33:18] [INFO] Client sent message: 3
+[2026-01-15 13:33:18] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:33:18] [INFO] Host received broadcast from client: 3
+[2026-01-15 13:33:19] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:33:19] [INFO] Host sent message: 3
+[2026-01-15 13:33:19] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:33:19] [INFO] Client received broadcast: 3
+[2026-01-15 13:35:25] [INFO] Client: Shutting down
+[2026-01-15 13:35:28] [INFO] Host: Shutting down
+[2026-01-15 13:35:28] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:35:28] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:44:03] [INFO] Host: Starting with connection type: mq
+[2026-01-15 13:44:03] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 13:44:03] [INFO] Host: Creating message queue connections...
+[2026-01-15 13:44:03] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 13:44:03] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:44:03] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 13:44:03] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:44:03] [INFO] Host: Connections created successfully
+[2026-01-15 13:44:03] [INFO] Host: Client started with PID: 35393
+[2026-01-15 13:44:03] [INFO] Client: Starting with connection type: mq
+[2026-01-15 13:44:03] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 13:44:03] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 13:44:03] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:44:03] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 13:44:03] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:44:03] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:44:04] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:44:04] [INFO] Host: Client joined
+[2026-01-15 13:44:06] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:44:06] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:44:06] [INFO] Client sent message: wedef
+[2026-01-15 13:44:06] [INFO] Host received broadcast from client: wedef
+[2026-01-15 13:44:07] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:44:07] [INFO] Host sent message: 2e3f34rff4
+[2026-01-15 13:44:07] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:44:07] [INFO] Client received broadcast: 2e3f34rff4
+[2026-01-15 13:44:08] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:44:08] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:44:08] [INFO] Client sent message: 34f3f4
+[2026-01-15 13:44:08] [INFO] Host received broadcast from client: 34f3f4
+[2026-01-15 13:44:10] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:44:10] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:44:10] [INFO] Host sent message: /quit
+[2026-01-15 13:44:10] [INFO] Client received broadcast: /quit
+[2026-01-15 13:44:15] [INFO] Client: Shutting down
+[2026-01-15 13:44:22] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:44:22] [INFO] Host sent message: /quit
+[2026-01-15 13:44:25] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:44:25] [INFO] Host sent message: /quit
+[2026-01-15 13:48:12] [INFO] Host: Starting with connection type: mq
+[2026-01-15 13:48:12] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 13:48:12] [INFO] Host: Creating message queue connections...
+[2026-01-15 13:48:12] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 13:48:12] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:48:12] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 13:48:12] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:48:12] [INFO] Host: Connections created successfully
+[2026-01-15 13:48:12] [INFO] Host: Client started with PID: 35656
+[2026-01-15 13:48:12] [INFO] Client: Starting with connection type: mq
+[2026-01-15 13:48:12] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 13:48:12] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 13:48:12] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:48:12] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 13:48:12] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:48:12] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:13] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:13] [INFO] Host: Client joined
+[2026-01-15 13:48:15] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:15] [INFO] Client sent message: 123
+[2026-01-15 13:48:15] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:15] [INFO] Host received broadcast from client: 123
+[2026-01-15 13:48:24] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:24] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:24] [INFO] Host sent message: 12e1231322123
+[2026-01-15 13:48:24] [INFO] Client received broadcast: 12e1231322123
+[2026-01-15 13:48:28] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:28] [INFO] Client sent message: 123123123
+[2026-01-15 13:48:28] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:28] [INFO] Host received broadcast from client: 123123123
+[2026-01-15 13:48:29] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:29] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:29] [INFO] Host sent message: 12313223
+[2026-01-15 13:48:29] [INFO] Client received broadcast: 12313223
+[2026-01-15 13:48:30] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:30] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:30] [INFO] Client sent message: 23d23d
+[2026-01-15 13:48:30] [INFO] Host received broadcast from client: 23d23d
+[2026-01-15 13:48:34] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:34] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:34] [INFO] Host sent message: ref
+[2026-01-15 13:48:34] [INFO] Client received broadcast: ref
+[2026-01-15 13:48:41] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:41] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:41] [INFO] Client sent message: e
+[2026-01-15 13:48:41] [INFO] Host received broadcast from client: e
+[2026-01-15 13:48:42] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:42] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:42] [INFO] Host sent message: e
+[2026-01-15 13:48:42] [INFO] Client received broadcast: e
+[2026-01-15 13:48:42] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:42] [INFO] Client sent message: r
+[2026-01-15 13:48:42] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:42] [INFO] Host received broadcast from client: r
+[2026-01-15 13:48:43] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:48:43] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:48:43] [INFO] Host sent message: r
+[2026-01-15 13:48:43] [INFO] Client received broadcast: r
+[2026-01-15 13:49:42] [ERROR] Client: No messages sent for 60 seconds, terminating
+[2026-01-15 13:53:56] [INFO] Host: Starting with connection type: mq
+[2026-01-15 13:53:56] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 13:53:56] [INFO] Host: Creating message queue connections...
+[2026-01-15 13:53:56] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 13:53:56] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:53:56] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 13:53:56] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:53:56] [INFO] Host: Connections created successfully
+[2026-01-15 13:53:56] [INFO] Host: Client started with PID: 35922
+[2026-01-15 13:53:56] [INFO] Client: Starting with connection type: mq
+[2026-01-15 13:53:56] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 13:53:56] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 13:53:56] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:53:56] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 13:53:56] [INFO] ConnMQ: Opened message queue and semaphores13:56 15.01.2026
+[2026-01-15 13:53:57] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:53:58] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:53:58] [INFO] Host: Client joined
+[2026-01-15 13:53:59] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:53:59] [INFO] Client sent message: 123
+[2026-01-15 13:53:59] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:53:59] [INFO] Host received broadcast from client: 123
+[2026-01-15 13:54:01] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:54:01] [INFO] Host sent message: 123
+[2026-01-15 13:54:01] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:54:01] [INFO] Client received broadcast: 123
+[2026-01-15 13:54:35] [INFO] Client: Shutting down
+[2026-01-15 13:54:37] [INFO] Host: Shutting down
+[2026-01-15 13:54:37] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:54:37] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:55:15] [INFO] Host: Starting with connection type: mq
+[2026-01-15 13:55:15] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 13:55:15] [INFO] Host: Creating message queue connections...
+[2026-01-15 13:55:15] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 13:55:15] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:55:15] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 13:55:15] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:55:15] [INFO] Host: Connections created successfully
+[2026-01-15 13:55:15] [INFO] Host: Client started with PID: 36140
+[2026-01-15 13:55:15] [INFO] Client: Starting with connection type: mq
+[2026-01-15 13:55:15] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 13:55:15] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 13:55:15] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:55:15] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 13:55:15] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:55:16] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:55:17] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:55:17] [INFO] Host: Client joined
+[2026-01-15 13:55:18] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:55:18] [INFO] Client sent message: 123
+[2026-01-15 13:55:18] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:55:18] [INFO] Host received broadcast from client: 123
+[2026-01-15 13:55:20] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:55:20] [INFO] Host sent message: 323
+[2026-01-15 13:55:20] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:55:20] [INFO] Client received broadcast: 323
+[2026-01-15 13:55:32] [ERROR] ConnMQ: Read error: Interrupted system call
+[2026-01-15 13:55:34] [INFO] Client: Shutting down
+[2026-01-15 13:55:34] [INFO] Host: Shutting down
+[2026-01-15 13:55:34] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:55:34] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 13:55:47] [INFO] Host: Starting with connection type: mq
+[2026-01-15 13:55:47] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 13:55:47] [INFO] Host: Creating message queue connections...
+[2026-01-15 13:55:47] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 13:55:47] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:55:47] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 13:55:47] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 13:55:47] [INFO] Host: Connections created successfully
+[2026-01-15 13:55:47] [INFO] Host: Client started with PID: 36353
+[2026-01-15 13:55:47] [INFO] Client: Starting with connection type: mq
+[2026-01-15 13:55:47] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 13:55:47] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 13:55:47] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:55:47] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 13:55:47] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 13:55:47] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:55:48] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:55:48] [INFO] Host: Client joined
+[2026-01-15 13:55:49] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:55:49] [INFO] Client sent message: 123
+[2026-01-15 13:55:49] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:55:49] [INFO] Host received broadcast from client: 123
+[2026-01-15 13:55:50] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:55:50] [INFO] Host sent message: 123
+[2026-01-15 13:55:50] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:55:50] [INFO] Client received broadcast: 123
+[2026-01-15 13:55:51] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:55:51] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:55:51] [INFO] Client sent message: 1ed3
+[2026-01-15 13:55:51] [INFO] Host received broadcast from client: 1ed3
+[2026-01-15 13:55:52] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:55:52] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:55:52] [INFO] Client sent message: 3f34f3f
+[2026-01-15 13:55:52] [INFO] Host received broadcast from client: 3f34f3f
+[2026-01-15 13:55:53] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 13:55:53] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 13:55:53] [INFO] Host sent message: 34f134rf
+[2026-01-15 13:55:53] [INFO] Client received broadcast: 34f134rf
+[2026-01-15 14:03:36] [INFO] Host: Starting with connection type: mq
+[2026-01-15 14:03:36] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 14:03:36] [INFO] Host: Creating message queue connections...
+[2026-01-15 14:03:36] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 14:03:36] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 14:03:36] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 14:03:36] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 14:03:36] [INFO] Host: Connections created successfully
+[2026-01-15 14:03:36] [INFO] Host: Client started with PID: 36859
+[2026-01-15 14:03:36] [INFO] Client: Starting with connection type: mq
+[2026-01-15 14:03:36] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 14:03:36] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 14:03:36] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 14:03:36] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 14:03:36] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 14:03:36] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 14:03:37] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 14:03:37] [INFO] Host: Client joined
+[2026-01-15 14:04:33] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 14:04:33] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 14:04:33] [INFO] Client sent message: wreferoivjeor
+[2026-01-15 14:04:33] [INFO] Host received broadcast from client: wreferoivjeor
+[2026-01-15 14:05:01] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 14:05:01] [INFO] Client sent message: wef
+[2026-01-15 14:05:01] [INFO] Client: Shutting down
+[2026-01-15 14:05:01] [INFO] Host: Shutting down
+[2026-01-15 14:05:01] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 14:05:01] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 14:05:25] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 14:05:25] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 14:05:25] [INFO] Host: Creating FIFO connections...
+[2026-01-15 14:05:25] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 14:05:25] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:05:25] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 14:05:25] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:05:25] [INFO] Host: Connections created successfully
+[2026-01-15 14:05:25] [INFO] Host: Client started with PID: 36866
+[2026-01-15 14:05:25] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 14:05:25] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 14:05:25] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 14:05:25] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:05:25] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 14:05:25] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:05:26] [INFO] Client: Opening connections...
+[2026-01-15 14:05:26] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 14:05:27] [INFO] Host: Opening connections...
+[2026-01-15 14:05:27] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 14:05:27] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 14:05:27] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 14:05:27] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:05:27] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:05:27] [INFO] Host: Client joined
+[2026-01-15 14:05:28] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:05:28] [INFO] Host sent message: werferf
+[2026-01-15 14:05:28] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:05:28] [INFO] Client received broadcast: werferf
+[2026-01-15 14:05:34] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:05:34] [INFO] Client sent message: rferergergrge
+[2026-01-15 14:05:34] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:05:34] [INFO] Host received broadcast from client: rferergergrge
+[2026-01-15 14:06:35] [ERROR] Client: No messages sent for 60 seconds, terminating
+[2026-01-15 14:07:04] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 14:07:04] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 14:07:04] [INFO] Host: Creating FIFO connections...
+[2026-01-15 14:07:04] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 14:07:04] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:07:04] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 14:07:04] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:07:04] [INFO] Host: Connections created successfully
+[2026-01-15 14:07:04] [INFO] Host: Client started with PID: 36883
+[2026-01-15 14:07:04] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 14:07:04] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 14:07:04] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 14:07:04] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:07:04] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 14:07:04] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:07:05] [INFO] Client: Opening connections...
+[2026-01-15 14:07:05] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 14:07:06] [INFO] Host: Opening connections...
+[2026-01-15 14:07:06] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 14:07:06] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 14:07:06] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 14:07:06] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:07:06] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:07:06] [INFO] Host: Client joined
+[2026-01-15 14:07:08] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:07:08] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:07:08] [INFO] Host sent message: /quit
+[2026-01-15 14:07:08] [INFO] Client received broadcast: /quit
+[2026-01-15 14:07:14] [INFO] Client: Shutting down
+[2026-01-15 14:07:17] [INFO] Host: Shutting down
+[2026-01-15 14:07:17] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 14:07:17] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 14:07:21] [INFO] Host: Starting with connection type: mq
+[2026-01-15 14:07:21] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 14:07:21] [INFO] Host: Creating message queue connections...
+[2026-01-15 14:07:21] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 14:07:21] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 14:07:21] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 14:07:21] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 14:07:21] [INFO] Host: Connections created successfully
+[2026-01-15 14:07:21] [INFO] Host: Client started with PID: 36888
+[2026-01-15 14:07:21] [INFO] Client: Starting with connection type: mq
+[2026-01-15 14:07:21] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 14:07:21] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 14:07:21] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 14:07:21] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 14:07:21] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 14:07:21] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 14:07:22] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 14:07:22] [INFO] Host: Client joined
+[2026-01-15 14:07:24] [INFO] Client: Shutting down
+[2026-01-15 14:07:31] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 14:07:31] [INFO] Host sent message: /quit
+[2026-01-15 14:07:33] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 14:07:33] [INFO] Host sent message: /quit
+[2026-01-15 14:07:40] [INFO] Host: Shutting down
+[2026-01-15 14:07:40] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 14:07:40] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 14:07:49] [INFO] Host: Starting with connection type: sock
+[2026-01-15 14:07:49] [INFO] === Host: Starting chat with connection type: sock ===
+[2026-01-15 14:07:49] [INFO] Host: Creating socket connections...
+[2026-01-15 14:07:49] [INFO] ConnSock: Initializing with id=host_to_client, create=true
+[2026-01-15 14:07:49] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 14:07:49] [INFO] ConnSock: Initializing with id=client_to_host, create=true
+[2026-01-15 14:07:49] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 14:07:49] [INFO] Host: Connections created successfully
+[2026-01-15 14:07:49] [INFO] Host: Client started with PID: 36898
+[2026-01-15 14:07:49] [INFO] Client: Starting with connection type: sock
+[2026-01-15 14:07:49] [INFO] === Client: Starting chat with connection type: sock ===
+[2026-01-15 14:07:49] [INFO] ConnSock: Initializing with id=client_to_host, create=false
+[2026-01-15 14:07:49] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 14:07:49] [INFO] ConnSock: Initializing with id=host_to_client, create=false
+[2026-01-15 14:07:49] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 14:07:49] [INFO] Client: Opening connections...
+[2026-01-15 14:07:49] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 14:07:49] [INFO] ConnSock: Connected to server socket
+[2026-01-15 14:07:49] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 14:07:49] [INFO] ConnSock: Connected to server socket
+[2026-01-15 14:07:49] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 14:07:50] [INFO] Host: Opening connections...
+[2026-01-15 14:07:50] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 14:07:50] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 14:07:50] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 14:07:50] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 14:07:50] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 14:07:50] [INFO] Host: Client joined
+[2026-01-15 14:07:53] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 14:07:53] [INFO] Client sent message: 23df
+[2026-01-15 14:07:53] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 14:07:53] [INFO] Host received broadcast from client: 23df
+[2026-01-15 14:07:54] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 14:07:54] [INFO] Host sent message: 5g45g4
+[2026-01-15 14:07:54] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 14:07:54] [INFO] Client received broadcast: 5g45g4
+[2026-01-15 14:07:56] [INFO] Client: Shutting down
+[2026-01-15 14:12:17] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 14:12:17] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 14:12:17] [INFO] Host: Creating FIFO connections...
+[2026-01-15 14:12:17] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 14:12:17] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:12:17] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 14:12:17] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:12:17] [INFO] Host: Connections created successfully
+[2026-01-15 14:12:17] [INFO] Host: Client started with PID: 37117
+[2026-01-15 14:12:17] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 14:12:17] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 14:12:17] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 14:12:17] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:12:17] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 14:12:17] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:12:18] [INFO] Client: Opening connections...
+[2026-01-15 14:12:18] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 14:12:19] [INFO] Host: Opening connections...
+[2026-01-15 14:12:19] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 14:12:19] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 14:12:19] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 14:12:19] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:19] [INFO] Host: Client joined
+[2026-01-15 14:12:19] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:21] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:21] [INFO] Host sent message: цукацуа
+[2026-01-15 14:12:21] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:21] [INFO] Client received broadcast: цукацуа
+[2026-01-15 14:12:23] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:23] [INFO] Client sent message: tbrrt
+[2026-01-15 14:12:23] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:23] [INFO] Host received broadcast from client: tbrrt
+[2026-01-15 14:12:24] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:24] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:24] [INFO] Client received broadcast: th5th5
+[2026-01-15 14:12:24] [INFO] Host sent message: th5th5
+[2026-01-15 14:12:25] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:25] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:25] [INFO] Host received broadcast from client: 5yh56h56h5he
+[2026-01-15 14:12:25] [INFO] Client sent message: 5yh56h56h5he
+[2026-01-15 14:12:26] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:26] [INFO] Host sent message: 5h656
+[2026-01-15 14:12:26] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:26] [INFO] Client received broadcast: 5h656
+[2026-01-15 14:12:27] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:27] [INFO] Client sent message: 56h5h6he
+[2026-01-15 14:12:27] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:27] [INFO] Host received broadcast from client: 56h5h6he
+[2026-01-15 14:12:30] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:30] [INFO] Host sent message: /quit
+[2026-01-15 14:12:30] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:30] [INFO] Client received broadcast: /quit
+[2026-01-15 14:12:33] [INFO] Client: Shutting down
+[2026-01-15 14:12:42] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 14:12:42] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 14:12:42] [INFO] Host: Creating FIFO connections...
+[2026-01-15 14:12:42] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 14:12:42] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:12:42] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 14:12:42] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:12:42] [INFO] Host: Connections created successfully
+[2026-01-15 14:12:42] [INFO] Host: Client started with PID: 37122
+[2026-01-15 14:12:42] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 14:12:42] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 14:12:42] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 14:12:42] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:12:42] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 14:12:42] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:12:43] [INFO] Client: Opening connections...
+[2026-01-15 14:12:43] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 14:12:44] [INFO] Host: Opening connections...
+[2026-01-15 14:12:44] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 14:12:44] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 14:12:44] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 14:12:44] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:44] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:44] [INFO] Host: Client joined
+[2026-01-15 14:12:45] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:45] [INFO] Host sent message: /quit
+[2026-01-15 14:12:45] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:45] [INFO] Client received broadcast: /quit
+[2026-01-15 14:12:46] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:46] [INFO] Client sent message:  
+[2026-01-15 14:12:46] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:46] [INFO] Host received broadcast from client:  
+[2026-01-15 14:12:52] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:52] [INFO] Client sent message:  
+[2026-01-15 14:12:52] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:52] [INFO] Host received broadcast from client:  
+[2026-01-15 14:12:53] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:53] [INFO] Host sent message:  
+[2026-01-15 14:12:53] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:53] [INFO] Client received broadcast:  
+[2026-01-15 14:12:54] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:12:54] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:12:54] [INFO] Client sent message:  
+[2026-01-15 14:12:54] [INFO] Host received broadcast from client:  
+[2026-01-15 14:12:58] [INFO] Client: Shutting down
+[2026-01-15 14:13:20] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 14:13:20] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 14:13:20] [INFO] Host: Creating FIFO connections...
+[2026-01-15 14:13:20] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 14:13:20] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:13:20] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 14:13:20] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:13:20] [INFO] Host: Connections created successfully
+[2026-01-15 14:13:20] [INFO] Host: Client started with PID: 37128
+[2026-01-15 14:13:20] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 14:13:20] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 14:13:20] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 14:13:20] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:13:20] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 14:13:20] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:13:20] [INFO] Client: Opening connections...
+[2026-01-15 14:13:20] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 14:13:21] [INFO] Host: Opening connections...
+[2026-01-15 14:13:21] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 14:13:21] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 14:13:21] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 14:13:21] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:13:21] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:13:21] [INFO] Host: Client joined
+[2026-01-15 14:13:23] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:13:23] [INFO] Host sent message: /quit
+[2026-01-15 14:13:23] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:13:23] [INFO] Client received broadcast: /quit
+[2026-01-15 14:13:29] [INFO] Client: Shutting down
+[2026-01-15 14:20:59] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 14:20:59] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 14:20:59] [INFO] Host: Creating FIFO connections...
+[2026-01-15 14:20:59] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 14:20:59] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:20:59] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 14:20:59] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:20:59] [INFO] Host: Connections created successfully
+[2026-01-15 14:20:59] [INFO] Host: Client started with PID: 37459
+[2026-01-15 14:20:59] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 14:20:59] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 14:20:59] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 14:20:59] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:20:59] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 14:20:59] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:20:59] [INFO] Client: Opening connections...
+[2026-01-15 14:20:59] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 14:21:00] [INFO] Host: Opening connections...
+[2026-01-15 14:21:00] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 14:21:00] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 14:21:00] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 14:21:00] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:21:00] [INFO] Host: Client joined
+[2026-01-15 14:21:00] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:21:02] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:21:02] [INFO] Host sent message: rfer
+[2026-01-15 14:21:02] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:21:02] [INFO] Client received broadcast: rfer
+[2026-01-15 14:21:02] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:21:02] [INFO] Client sent message: 4g545g
+[2026-01-15 14:21:02] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:21:02] [INFO] Host received broadcast from client: 4g545g
+[2026-01-15 14:21:03] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:21:03] [INFO] Host sent message: 425g
+[2026-01-15 14:21:03] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:21:03] [INFO] Client received broadcast: 425g
+[2026-01-15 14:21:05] [INFO] Client: Shutting down
+[2026-01-15 14:21:19] [INFO] Host: Shutting down
+[2026-01-15 14:21:19] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 14:21:19] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 14:22:04] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 14:22:04] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 14:22:04] [INFO] Host: Creating FIFO connections...
+[2026-01-15 14:22:04] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 14:22:04] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:22:04] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 14:22:04] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:22:04] [INFO] Host: Connections created successfully
+[2026-01-15 14:22:04] [INFO] Host: Client started with PID: 37770
+[2026-01-15 14:22:04] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 14:22:04] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 14:22:04] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 14:22:04] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:22:04] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 14:22:04] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:22:04] [INFO] Client: Opening connections...
+[2026-01-15 14:22:04] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 14:22:05] [INFO] Host: Opening connections...
+[2026-01-15 14:22:05] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 14:22:05] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 14:22:05] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 14:22:05] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:22:05] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:22:05] [INFO] Host: Client joined
+[2026-01-15 14:22:07] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:22:07] [INFO] Host sent message: ef3f3
+[2026-01-15 14:22:07] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:22:07] [INFO] Client received broadcast: ef3f3
+[2026-01-15 14:22:07] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:22:07] [INFO] Client sent message: f34rf
+[2026-01-15 14:22:07] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:22:07] [INFO] Host received broadcast from client: f34rf
+[2026-01-15 14:22:09] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:22:09] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:22:09] [INFO] Host sent message: /quit
+[2026-01-15 14:22:09] [INFO] Client received broadcast: /quit
+[2026-01-15 14:22:11] [INFO] Client: Shutting down
+[2026-01-15 14:22:45] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 14:22:45] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 14:22:45] [INFO] Host: Creating FIFO connections...
+[2026-01-15 14:22:45] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 14:22:45] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:22:45] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 14:22:45] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:22:45] [INFO] Host: Connections created successfully
+[2026-01-15 14:22:45] [INFO] Host: Client started with PID: 37779
+[2026-01-15 14:22:45] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 14:22:45] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 14:22:45] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 14:22:45] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:22:45] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 14:22:45] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:22:45] [INFO] Client: Opening connections...
+[2026-01-15 14:22:45] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 14:22:46] [INFO] Host: Opening connections...
+[2026-01-15 14:22:46] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 14:22:46] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 14:22:46] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 14:22:46] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:22:46] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:22:46] [INFO] Host: Client joined
+[2026-01-15 14:22:48] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:22:48] [INFO] Host sent message: wef
+[2026-01-15 14:22:48] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:22:48] [INFO] Client received broadcast: wef
+[2026-01-15 14:22:57] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:22:57] [INFO] Client sent message: wef34f
+[2026-01-15 14:22:57] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:22:57] [INFO] Host received broadcast from client: wef34f
+[2026-01-15 14:23:03] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:23:03] [INFO] Host sent message: /quit
+[2026-01-15 14:23:03] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:23:03] [INFO] Client received broadcast: /quit
+[2026-01-15 14:23:28] [INFO] Client: Shutting down
+[2026-01-15 14:29:33] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 14:29:33] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 14:29:33] [INFO] Host: Creating FIFO connections...
+[2026-01-15 14:29:33] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 14:29:33] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:29:33] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 14:29:33] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 14:29:33] [INFO] Host: Connections created successfully
+[2026-01-15 14:29:33] [INFO] Host: Client started with PID: 38108
+[2026-01-15 14:29:33] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 14:29:33] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 14:29:33] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 14:29:33] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:29:33] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 14:29:33] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 14:29:34] [INFO] Client: Opening connections...
+[2026-01-15 14:29:34] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 14:29:35] [INFO] Host: Opening connections...
+[2026-01-15 14:29:35] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 14:29:35] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 14:29:35] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 14:29:35] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:35] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:35] [INFO] Host: Client joined
+[2026-01-15 14:29:36] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:36] [INFO] Host sent message: erferf
+[2026-01-15 14:29:36] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:36] [INFO] Client received broadcast: erferf
+[2026-01-15 14:29:36] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:36] [INFO] Client sent message: erg3erg
+[2026-01-15 14:29:36] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:36] [INFO] Host received broadcast from client: erg3erg
+[2026-01-15 14:29:37] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:37] [INFO] Host sent message: 4h5wh6
+[2026-01-15 14:29:37] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:37] [INFO] Client received broadcast: 4h5wh6
+[2026-01-15 14:29:38] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:38] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:38] [INFO] Client sent message: 4hw45h
+[2026-01-15 14:29:38] [INFO] Host received broadcast from client: 4hw45h
+[2026-01-15 14:29:39] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:39] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:39] [INFO] Host sent message: 4hw45h
+[2026-01-15 14:29:39] [INFO] Client received broadcast: 4hw45h
+[2026-01-15 14:29:43] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:43] [INFO] Host sent message: 4ht4
+[2026-01-15 14:29:43] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:43] [INFO] Client received broadcast: 4ht4
+[2026-01-15 14:29:44] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:44] [INFO] Client sent message: 4wh
+[2026-01-15 14:29:44] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:44] [INFO] Host received broadcast from client: 4wh
+[2026-01-15 14:29:44] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:44] [INFO] Host sent message: w4h5
+[2026-01-15 14:29:44] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:44] [INFO] Client received broadcast: w4h5
+[2026-01-15 14:29:45] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:45] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:45] [INFO] Client sent message: 4wh
+[2026-01-15 14:29:45] [INFO] Host received broadcast from client: 4wh
+[2026-01-15 14:29:45] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:45] [INFO] Host sent message: 4wh
+[2026-01-15 14:29:45] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:45] [INFO] Client received broadcast: 4wh
+[2026-01-15 14:29:46] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:46] [INFO] Client sent message: w4h
+[2026-01-15 14:29:46] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:46] [INFO] Host received broadcast from client: w4h
+[2026-01-15 14:29:46] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:46] [INFO] Host sent message: 4wh
+[2026-01-15 14:29:46] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:46] [INFO] Client received broadcast: 4wh
+[2026-01-15 14:29:47] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:47] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:47] [INFO] Client sent message: w45h
+[2026-01-15 14:29:47] [INFO] Host received broadcast from client: w45h
+[2026-01-15 14:29:51] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 14:29:51] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 14:29:51] [INFO] Host sent message: /quit
+[2026-01-15 14:29:51] [INFO] Client received broadcast: /quit
+[2026-01-15 14:29:57] [INFO] Client: Shutting down
+[2026-01-15 15:13:45] [INFO] Host: Starting with connection type: fifo
+[2026-01-15 15:13:45] [INFO] === Host: Starting chat with connection type: fifo ===
+[2026-01-15 15:13:45] [INFO] Host: Creating FIFO connections...
+[2026-01-15 15:13:45] [INFO] ConnFIFO: Initializing with id=host_to_client, create=true
+[2026-01-15 15:13:45] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 15:13:45] [INFO] ConnFIFO: Initializing with id=client_to_host, create=true
+[2026-01-15 15:13:45] [INFO] ConnFIFO: Created FIFOs and semaphores
+[2026-01-15 15:13:45] [INFO] Host: Connections created successfully
+[2026-01-15 15:13:45] [INFO] Host: Client started with PID: 38793
+[2026-01-15 15:13:45] [INFO] Client: Starting with connection type: fifo
+[2026-01-15 15:13:45] [INFO] === Client: Starting chat with connection type: fifo ===
+[2026-01-15 15:13:45] [INFO] ConnFIFO: Initializing with id=client_to_host, create=false
+[2026-01-15 15:13:45] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 15:13:45] [INFO] ConnFIFO: Initializing with id=host_to_client, create=false
+[2026-01-15 15:13:45] [INFO] ConnFIFO: Client initialized, will open FIFOs in Open()
+[2026-01-15 15:13:45] [INFO] Client: Opening connections...
+[2026-01-15 15:13:45] [INFO] ConnFIFO: Client opened read FIFO (host_to_client)
+[2026-01-15 15:13:46] [INFO] Host: Opening connections...
+[2026-01-15 15:13:46] [INFO] ConnFIFO: Host opened read FIFO (client_to_host)
+[2026-01-15 15:13:46] [INFO] ConnFIFO: Host opened write FIFO (host_to_client)
+[2026-01-15 15:13:46] [INFO] ConnFIFO: Client opened write FIFO (client_to_host)
+[2026-01-15 15:13:46] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 15:13:46] [INFO] Host: Client joined
+[2026-01-15 15:13:46] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 15:13:47] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 15:13:47] [INFO] Host sent message: ergerg
+[2026-01-15 15:13:47] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 15:13:47] [INFO] Client received broadcast: ergerg
+[2026-01-15 15:13:48] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 15:13:48] [INFO] Client sent message: etrgoi4jg5
+[2026-01-15 15:13:48] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 15:13:48] [INFO] Host received broadcast from client: etrgoi4jg5
+[2026-01-15 15:13:49] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 15:13:49] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 15:13:49] [INFO] Host sent message: 45goi4g5oij
+[2026-01-15 15:13:49] [INFO] Client received broadcast: 45goi4g5oij
+[2026-01-15 15:13:50] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 15:13:50] [INFO] Client sent message: 4tg
+[2026-01-15 15:13:50] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 15:13:50] [INFO] Host received broadcast from client: 4tg
+[2026-01-15 15:13:52] [INFO] ConnFIFO: Wrote 280 bytes
+[2026-01-15 15:13:52] [INFO] ConnFIFO: Read 280 bytes
+[2026-01-15 15:13:52] [INFO] Host: Received quit from host
+[2026-01-15 15:13:53] [INFO] Client: Shutting down
+[2026-01-15 15:13:53] [INFO] Host: Shutting down
+[2026-01-15 15:13:53] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 15:13:53] [INFO] ConnFIFO: Cleaned up resources
+[2026-01-15 15:14:02] [INFO] Host: Starting with connection type: mq
+[2026-01-15 15:14:02] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 15:14:02] [INFO] Host: Creating message queue connections...
+[2026-01-15 15:14:02] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 15:14:02] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 15:14:02] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 15:14:02] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 15:14:02] [INFO] Host: Connections created successfully
+[2026-01-15 15:14:02] [INFO] Host: Client started with PID: 38798
+[2026-01-15 15:14:02] [INFO] Client: Starting with connection type: mq
+[2026-01-15 15:14:02] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 15:14:02] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 15:14:02] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 15:14:02] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 15:14:02] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 15:14:02] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:14:03] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 15:14:03] [INFO] Host: Client joined
+[2026-01-15 15:14:05] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:14:05] [INFO] Client sent message: wrfwrf3rf
+[2026-01-15 15:14:05] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 15:14:05] [INFO] Host received broadcast from client: wrfwrf3rf
+[2026-01-15 15:14:06] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:14:06] [INFO] Host sent message: 3rfq
+[2026-01-15 15:14:06] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 15:14:06] [INFO] Client received broadcast: 3rfq
+[2026-01-15 15:14:06] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:14:06] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 15:14:06] [INFO] Client sent message: q3rg
+[2026-01-15 15:14:06] [INFO] Host received broadcast from client: q3rg
+[2026-01-15 15:14:06] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:14:06] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 15:14:06] [INFO] Host sent message: 3rg
+[2026-01-15 15:14:06] [INFO] Client received broadcast: 3rg
+[2026-01-15 15:14:07] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 15:14:07] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:14:07] [INFO] Client sent message: 34rg4q3rgq4rg
+[2026-01-15 15:14:07] [INFO] Host received broadcast from client: 34rg4q3rgq4rg
+[2026-01-15 15:14:09] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:14:09] [INFO] Host sent message: vf
+[2026-01-15 15:14:09] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 15:14:09] [INFO] Client received broadcast: vf
+[2026-01-15 15:14:11] [INFO] Client: Shutting down
+[2026-01-15 15:14:15] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:14:15] [INFO] Host: Shutting down
+[2026-01-15 15:14:15] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 15:14:15] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 15:14:27] [INFO] Host: Starting with connection type: sock
+[2026-01-15 15:14:27] [INFO] === Host: Starting chat with connection type: sock ===
+[2026-01-15 15:14:27] [INFO] Host: Creating socket connections...
+[2026-01-15 15:14:27] [INFO] ConnSock: Initializing with id=host_to_client, create=true
+[2026-01-15 15:14:27] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 15:14:27] [INFO] ConnSock: Initializing with id=client_to_host, create=true
+[2026-01-15 15:14:27] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 15:14:27] [INFO] Host: Connections created successfully
+[2026-01-15 15:14:27] [INFO] Host: Client started with PID: 38804
+[2026-01-15 15:14:27] [INFO] Client: Starting with connection type: sock
+[2026-01-15 15:14:27] [INFO] === Client: Starting chat with connection type: sock ===
+[2026-01-15 15:14:27] [INFO] ConnSock: Initializing with id=client_to_host, create=false
+[2026-01-15 15:14:27] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 15:14:27] [INFO] ConnSock: Initializing with id=host_to_client, create=false
+[2026-01-15 15:14:27] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 15:14:28] [INFO] Client: Opening connections...
+[2026-01-15 15:14:28] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 15:14:28] [INFO] ConnSock: Connected to server socket
+[2026-01-15 15:14:28] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 15:14:28] [INFO] ConnSock: Connected to server socket
+[2026-01-15 15:14:28] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 15:14:29] [INFO] Host: Opening connections...
+[2026-01-15 15:14:29] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 15:14:29] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 15:14:29] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 15:14:29] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 15:14:29] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 15:14:29] [INFO] Host: Client joined
+[2026-01-15 15:14:30] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 15:14:30] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 15:14:30] [INFO] Client sent message: werfqrfg
+[2026-01-15 15:14:30] [INFO] Host received broadcast from client: werfqrfg
+[2026-01-15 15:14:31] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 15:14:31] [INFO] Host sent message: 245g245g
+[2026-01-15 15:14:31] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 15:14:31] [INFO] Client received broadcast: 245g245g
+[2026-01-15 15:14:33] [INFO] Client: Shutting down
+[2026-01-15 15:19:05] [INFO] Host: Starting with connection type: mq
+[2026-01-15 15:19:05] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 15:19:05] [INFO] Host: Creating message queue connections...
+[2026-01-15 15:19:05] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 15:19:05] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 15:19:05] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 15:19:05] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 15:19:05] [INFO] Host: Connections created successfully
+[2026-01-15 15:19:05] [INFO] Host: Client started with PID: 38816
+[2026-01-15 15:19:05] [INFO] Client: Starting with connection type: mq
+[2026-01-15 15:19:05] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 15:19:05] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 15:19:05] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 15:19:05] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 15:19:05] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 15:19:06] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:19:07] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 15:19:07] [INFO] Host: Client joined
+[2026-01-15 15:19:10] [INFO] Client: Shutting down
+[2026-01-15 15:19:12] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:19:13] [INFO] Host: Shutting down
+[2026-01-15 15:19:13] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 15:19:13] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 15:19:17] [INFO] Host: Starting with connection type: sock
+[2026-01-15 15:19:17] [INFO] === Host: Starting chat with connection type: sock ===
+[2026-01-15 15:19:17] [INFO] Host: Creating socket connections...
+[2026-01-15 15:19:17] [INFO] ConnSock: Initializing with id=host_to_client, create=true
+[2026-01-15 15:19:17] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 15:19:17] [INFO] ConnSock: Initializing with id=client_to_host, create=true
+[2026-01-15 15:19:17] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 15:19:17] [INFO] Host: Connections created successfully
+[2026-01-15 15:19:17] [INFO] Host: Client started with PID: 38821
+[2026-01-15 15:19:17] [INFO] Client: Starting with connection type: sock
+[2026-01-15 15:19:17] [INFO] === Client: Starting chat with connection type: sock ===
+[2026-01-15 15:19:17] [INFO] ConnSock: Initializing with id=client_to_host, create=false
+[2026-01-15 15:19:17] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 15:19:17] [INFO] ConnSock: Initializing with id=host_to_client, create=false
+[2026-01-15 15:19:17] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 15:19:17] [INFO] Client: Opening connections...
+[2026-01-15 15:19:17] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 15:19:17] [INFO] ConnSock: Connected to server socket
+[2026-01-15 15:19:17] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 15:19:17] [INFO] ConnSock: Connected to server socket
+[2026-01-15 15:19:17] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 15:19:18] [INFO] Host: Opening connections...
+[2026-01-15 15:19:18] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 15:19:18] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 15:19:18] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 15:19:18] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 15:19:18] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 15:19:18] [INFO] Host: Client joined
+[2026-01-15 15:19:20] [INFO] Client: Shutting down
+[2026-01-15 15:19:27] [INFO] Host: Starting with connection type: sock
+[2026-01-15 15:19:27] [INFO] === Host: Starting chat with connection type: sock ===
+[2026-01-15 15:19:27] [INFO] Host: Creating socket connections...
+[2026-01-15 15:19:27] [INFO] ConnSock: Initializing with id=host_to_client, create=true
+[2026-01-15 15:19:27] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 15:19:27] [INFO] ConnSock: Initializing with id=client_to_host, create=true
+[2026-01-15 15:19:27] [INFO] ConnSock: Created server socket and semaphores
+[2026-01-15 15:19:27] [INFO] Host: Connections created successfully
+[2026-01-15 15:19:27] [INFO] Host: Client started with PID: 38826
+[2026-01-15 15:19:27] [INFO] Client: Starting with connection type: sock
+[2026-01-15 15:19:27] [INFO] === Client: Starting chat with connection type: sock ===
+[2026-01-15 15:19:27] [INFO] ConnSock: Initializing with id=client_to_host, create=false
+[2026-01-15 15:19:27] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 15:19:27] [INFO] ConnSock: Initializing with id=host_to_client, create=false
+[2026-01-15 15:19:27] [INFO] ConnSock: Client socket initialized, will connect in Open()
+[2026-01-15 15:19:28] [INFO] Client: Opening connections...
+[2026-01-15 15:19:28] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 15:19:28] [INFO] ConnSock: Connected to server socket
+[2026-01-15 15:19:28] [INFO] ConnSock: Connecting to server socket...
+[2026-01-15 15:19:28] [INFO] ConnSock: Connected to server socket
+[2026-01-15 15:19:28] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 15:19:29] [INFO] Host: Opening connections...
+[2026-01-15 15:19:29] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 15:19:29] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 15:19:29] [INFO] ConnSock: Waiting for client connection...
+[2026-01-15 15:19:29] [INFO] ConnSock: Accepted connection from client
+[2026-01-15 15:19:29] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 15:19:29] [INFO] Host: Client joined
+[2026-01-15 15:19:31] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 15:19:31] [INFO] Client sent message: /squit
+[2026-01-15 15:19:31] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 15:19:31] [INFO] Host received broadcast from client: /squit
+[2026-01-15 15:19:36] [INFO] ConnSock: Wrote 280 bytes
+[2026-01-15 15:19:36] [INFO] ConnSock: Read 280 bytes
+[2026-01-15 15:19:36] [INFO] Host: Received quit from host
+[2026-01-15 15:19:37] [INFO] Client: Shutting down
+[2026-01-15 15:19:37] [INFO] Host: Shutting down
+[2026-01-15 15:19:37] [INFO] ConnSock: Cleaned up resources
+[2026-01-15 15:19:37] [INFO] ConnSock: Cleaned up resources
+[2026-01-15 15:19:40] [INFO] Host: Starting with connection type: mq
+[2026-01-15 15:19:40] [INFO] === Host: Starting chat with connection type: mq ===
+[2026-01-15 15:19:40] [INFO] Host: Creating message queue connections...
+[2026-01-15 15:19:40] [INFO] ConnMQ: Initializing with id=host_to_client, create=true
+[2026-01-15 15:19:40] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 15:19:40] [INFO] ConnMQ: Initializing with id=client_to_host, create=true
+[2026-01-15 15:19:40] [INFO] ConnMQ: Created message queue and semaphores
+[2026-01-15 15:19:40] [INFO] Host: Connections created successfully
+[2026-01-15 15:19:40] [INFO] Host: Client started with PID: 38832
+[2026-01-15 15:19:40] [INFO] Client: Starting with connection type: mq
+[2026-01-15 15:19:40] [INFO] === Client: Starting chat with connection type: mq ===
+[2026-01-15 15:19:40] [INFO] ConnMQ: Initializing with id=client_to_host, create=false
+[2026-01-15 15:19:40] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 15:19:40] [INFO] ConnMQ: Initializing with id=host_to_client, create=false
+[2026-01-15 15:19:40] [INFO] ConnMQ: Opened message queue and semaphores
+[2026-01-15 15:19:40] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:19:41] [INFO] ConnMQ: Read 280 bytes
+[2026-01-15 15:19:41] [INFO] Host: Client joined
+[2026-01-15 15:19:43] [INFO] Client: Shutting down
+[2026-01-15 15:19:45] [INFO] ConnMQ: Wrote 280 bytes
+[2026-01-15 15:19:45] [INFO] Host: Shutting down
+[2026-01-15 15:19:45] [INFO] ConnMQ: Cleaned up resources
+[2026-01-15 15:19:45] [INFO] ConnMQ: Cleaned up resources
